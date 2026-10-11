@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="UCUPA organizes the united cyber universe through anchor trees, local coordinate frames, and independently owned spatial facts.">
+  <meta name="theme-color" content="#f6f5ef">
+  <title>UCUPA — Spatial infrastructure for the united cyber universe</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%224%204%20112%20112%22%3E%3Cstyle%3Epath%7Bstroke%3A%23202d2a%7D%40media(prefers-color-scheme%3Adark)%7Bpath%7Bstroke%3A%23fff%7D%7D%3C%2Fstyle%3E%3Cpath%20d%3D%22M45%2035%20L45%2025%20A15%2015%200%200%201%2075%2025%20L75%2035%20C75%2060%2067.5%2073%2045.849365%2085.490381%20L37.189111%2090.490381%20A15%2015%200%200%201%2022.189111%2064.509619%20L30.849365%2059.509619%20C52.5%2047.009619%2067.50833%2047.004809%2089.150635%2059.509619%20L97.810889%2064.509619%20A15%2015%200%200%201%2082.810889%2090.490381%20L74.150635%2085.490381%20C52.5%2072.990381%2044.99167%2059.995191%2045%2035%20Z%22%20fill%3D%22none%22%20stroke-width%3D%227.5%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E">
+  <link rel="stylesheet" href="styles.css?v=20261011-1">
+  <script src="app.js" defer></script>
+  <script src="spatial-scene.js?v=pointer-focus-2" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#u-home">Skip to content</a>
+  <div id="ucupa-site">
+<div class="u-site" lang="en" aria-label="UCUPA homepage">
+    <header class="u-header">
+      <a class="u-wordmark cursor-interaction" href="#u-home" aria-label="UCUPA home"><img src="assets/ucupa-lockup.svg" width="170" height="48" alt="UCUPA"></a>
+      <nav class="u-nav" aria-label="Main navigation">
+        <a class="cursor-interaction" href="#u-model">The model</a><a class="cursor-interaction" href="#u-architecture">Architecture</a><a class="cursor-interaction" href="#u-journey">Use UCUPA</a><a class="cursor-interaction" href="#u-example">Quickstart</a><span class="u-prototype">Prototype</span>
+      </nav>
+      <details class="u-mobile-menu"><summary class="cursor-interaction">Menu +</summary><nav class="u-mobile-links" aria-label="Mobile navigation"><a class="cursor-interaction" href="#u-model">The model</a><a class="cursor-interaction" href="#u-architecture">Architecture</a><a class="cursor-interaction" href="#u-journey">Use UCUPA</a><a class="cursor-interaction" href="#u-example">Quickstart</a><a class="cursor-interaction" href="#u-status">Project status</a></nav></details>
+    </header>
+    <main id="u-home">
+      <section class="u-hero" aria-labelledby="u-headline">
+        <div>
+          <h1 id="u-headline">Spatial infrastructure for the <em>united cyber universe</em></h1>
+          <p class="u-intro">UCUPA is designed for a world that grows in extent and local detail. It organizes space as a tree of local coordinate frames, with different operators maintaining its branches.</p>
+          <div class="u-actions"><a class="u-action cursor-interaction" href="https://github.com/EthanSi2021/UCUPA" target="_blank" rel="noopener noreferrer">GitHub</a><a class="u-link cursor-interaction" href="#u-example">Run the example</a></div>
+        </div>
+      </section>
+      <section id="u-model" class="u-section">
+        <div class="u-section-heading"><h2>How UCUPA organizes space</h2><p class="u-section-description">Objects have stable identities. Non-root objects store their positions and orientations relative to a parent anchor, so each branch can be described in its own local frame.</p></div>
+        <div class="u-model-intro"><h3>Anchors and entities</h3><p>Every Element is an <strong>Anchor</strong> or an <strong>Entity</strong>. Anchors contain other anchors and entities; entities are leaves. Each non-root element has one parent anchor and a position and orientation relative to it. The root defines the reference frame for this tree.</p></div>
+        <div class="u-spatial-demo" aria-labelledby="u-organization-title">
+          <div class="u-tree-panel">
+            <div class="u-panel-label">STRUCTURE / PARENT → CHILD</div>
+            <ul class="u-tree" aria-label="Example spatial tree">
+              <li><div class="u-tree-node"><strong><i class="u-anchor-mark" aria-hidden="true"></i>Root R</strong><small>No parent · no local pose · unbounded range</small></div>
+                <ul>
+                  <li><div class="u-tree-node"><strong><i class="u-anchor-mark" aria-hidden="true"></i>Anchor A</strong><small>(3, 1, 1) relative to R</small></div>
+                    <ul>
+                      <li><div class="u-tree-node"><strong><i class="u-anchor-mark" aria-hidden="true"></i>Anchor B</strong><small>(2, 0, 1) relative to A</small></div>
+                        <ul><li><div class="u-tree-node"><strong><i class="u-entity-mark" aria-hidden="true"></i>Entity E-04</strong><small>(1, 0, 1) relative to B</small></div></li></ul>
+                      </li>
+                      <li><div class="u-tree-node"><strong><i class="u-entity-mark" aria-hidden="true"></i>Entity E-05</strong><small>(0, −2, 0.5) relative to A</small></div></li>
+                    </ul>
+                  </li>
+                  <li><div class="u-tree-node"><strong><i class="u-anchor-mark" aria-hidden="true"></i>Anchor C</strong><small>(−3, 2, 0.5) relative to R</small></div>
+                    <ul><li><div class="u-tree-node"><strong><i class="u-entity-mark" aria-hidden="true"></i>Entity E-06</strong><small>(1, 0, 1) relative to C</small></div></li></ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="u-pose-panel">
+            <div class="u-panel-label">3D SPACE / THE SAME TREE</div>
+            <h3 id="u-organization-title">The tree in three dimensions</h3>
+            <p>A contains B and E-05; B contains E-04. C holds a separate branch. The view uses the local positions shown in the tree.</p>
+            <figure class="u-orbit-figure">
+              <svg class="u-spatial-view" tabindex="0" role="img" aria-label="Rotatable three-dimensional view of the spatial tree"><title>Nested anchors and entities</title><desc>Root R has anchors A and C. A contains anchor B and entity E-05. B contains E-04; C contains E-06. Wire spheres show the finite ranges of A, B, and C. Drag or use arrow keys to turn the view; the structure does not change.</desc></svg>
+            </figure>
+            <div class="u-spatial-legend" aria-label="Scene legend"><span><i class="u-anchor-mark" aria-hidden="true"></i>Anchor</span><span><i class="u-entity-mark" aria-hidden="true"></i>Entity</span><span><i class="u-range-mark" aria-hidden="true"></i>Anchor range</span></div>
+            <p class="u-diagram-note">Wire spheres show anchor ranges; lines show parentage.</p>
+          </div>
+        </div>
+        <div class="u-composition-rule"><span>LOCAL → ANCESTOR</span><code>T<sub>R←E</sub> = T<sub>R←A</sub> · T<sub>A←B</sub> · T<sub>B←E</sub></code><p>Compose position and orientation along the parent chain to express E-04 in R’s frame.</p></div>
+        <div class="u-model-points"><article><h3>Stable identities</h3><p>Moving an element or changing its parent preserves its identity. Moving an anchor changes its descendants’ derived poses without rewriting their local records.</p></article><article><h3>Ranges for discovery</h3><p>Non-root anchors have finite spherical ranges covering their descendants. Queries use these ranges to skip branches that cannot intersect the search region.</p></article><article><h3>Spatial inheritance</h3><p>Descendants follow their ancestor frames. Permissions and application properties do not inherit through this relationship.</p></article></div>
+      </section>
+      <section id="u-architecture" class="u-section">
+        <div class="u-section-heading"><h2>Core, Facet, and Realm</h2></div>
+        <div class="u-module-grid">
+          <article class="u-module"><div class="u-module-name"><strong>Core</strong></div><h3>Spatial facts</h3><p>Stores element identity, parent, local pose, and range. Answers spatial queries and commits spatial changes.</p><code>element · parent · pose · range</code></article>
+          <article class="u-module"><div class="u-module-name"><strong>Facet</strong></div><h3>Attached content</h3><p>Stores opaque payloads keyed by element and type reference. Applications define and interpret their formats.</p><code>element + TypeRef → payload</code></article>
+          <article class="u-module"><div class="u-module-name"><strong>Realm</strong></div><h3>Identity and access</h3><p>Verifies callers and decides whether they may perform an action on a target.</p><code>subject · target · action</code></article>
+        </div>
+      </section>
+      <section class="u-section" id="u-journey" aria-labelledby="u-use-title">
+        <div class="u-section-heading"><h2 id="u-use-title">Five public behaviors</h2><p class="u-section-description">Applications enter a space, discover objects, read their facts, observe changes, and propose updates.</p></div>
+        <ol class="u-behaviors" aria-label="Five public behaviors">
+          <li><div class="u-behavior-name"><span>01</span><h3>Enter</h3></div><div class="u-behavior-purpose"><h4>Where do I begin?</h4><p>Begin at an anchor using a space reference and an authenticated identity.</p></div><p class="u-behavior-example">A viewer enters the space rooted at R.</p></li>
+          <li><div class="u-behavior-name"><span>02</span><h3>Discover</h3></div><div class="u-behavior-purpose"><h4>What is here?</h4><p>Follow a path, list an anchor’s children, or search a region. Results identify what was searched and whether the search was complete.</p></div><p class="u-behavior-example">A region query around B finds E-04.</p></li>
+          <li><div class="u-behavior-name"><span>03</span><h3>Read</h3></div><div class="u-behavior-purpose"><h4>What are the facts?</h4><p>Read an object’s spatial facts from Core and its attached content from Facet, when present.</p></div><p class="u-behavior-example">Read E-04’s position, orientation, and any attached content.</p></li>
+          <li><div class="u-behavior-name"><span>04</span><h3>Observe</h3></div><div class="u-behavior-purpose"><h4>What has changed?</h4><p>Follow recorded spatial and content changes to keep an application up to date.</p></div><p class="u-behavior-example">An editor updates the records it displays as changes arrive.</p></li>
+          <li><div class="u-behavior-name"><span>05</span><h3>Propose</h3></div><div class="u-behavior-purpose"><h4>Can I change it?</h4><p>Request a spatial or content change. The responsible Core or Facet checks permissions and conditions before accepting it.</p></div><p class="u-behavior-example">An editor requests a new position for A.</p></li>
+        </ol>
+        <div class="u-use-guides">
+          <article><h3>Viewers and editors</h3><p>A viewer uses <strong>Enter → Discover → Read</strong>, then <strong>Observe</strong> to follow changes. An editor also uses <strong>Propose</strong>.</p><p>Your application handles rendering, simulation, user interfaces, and payload interpretation. Each protected operation is authorized separately.</p></article>
+          <article><h3>Connecting an application</h3><p>Applications connect to Core and Facet through their public interfaces. Go SDKs use gRPC/TLS; other languages can use the same Protobuf contracts.</p></article>
+        </div>
+      </section>
+      <section id="u-mounts" class="u-section" aria-labelledby="u-mount-title">
+        <div class="u-section-heading"><h2 id="u-mount-title">Anchor mounts</h2><p class="u-section-description">An anchor mount lets another Core maintain the branch beneath an anchor as part of the same spatial tree.</p></div>
+        <div class="u-ownership">
+          <div><p>Core A keeps ownership of mount anchor M: its identity, pose, and range. Core B owns M’s direct children and the branch it carries. Those children store poses relative to M, not to a new root.</p><p>Connected reads and spatial queries can follow the branch across Core boundaries. Coordinate transforms still compose through the same parent chain.</p></div>
+          <ol class="u-owner-chain" aria-label="Example parent chain and ownership across one anchor mount"><li><span>Root R</span><b>Core A</b></li><li><span>Mount anchor M</span><b>Core A</b></li><li><span>Children of M</span><b>Core B</b></li></ol>
+        </div>
+        <div class="u-mount-control"><p>To establish a mount, create M beneath the intended parent in A, request B as its carrier, and obtain approval from both sides. The Cores coordinate the relationship before B begins maintaining the branch. This extends the existing tree; it does not join two independent roots.</p><p>Each Core retains its own stores and access decisions. Mounting defines a spatial relationship, not a general permission to read or write another operator’s data.</p></div>
+      </section>
+      <section id="u-example" class="u-section u-run">
+        <div class="u-section-heading"><h2>Run UCUPA locally</h2></div>
+        <div class="u-run-grid"><div class="u-run-copy"><p>Get the source from <a class="u-inline-link" href="https://github.com/EthanSi2021/UCUPA" target="_blank" rel="noopener noreferrer">GitHub</a>, then run the example from the repository root with <strong>Go 1.25 or later</strong>.</p><p>The demo covers discovery, content access, observation, and cross-Core reads. It uses temporary local stores and needs no separate database or service.</p><p class="u-proof-note">For host setup and verification, see the <a class="u-inline-link" href="https://github.com/EthanSi2021/UCUPA/blob/main/RUN.md" target="_blank" rel="noopener noreferrer">run guide</a>.</p></div><div><div class="u-terminal"><div class="u-terminal-bar"><span>LOCAL EXAMPLE</span><button class="u-copy" id="u-copy-command" type="button">Copy command</button></div><pre><code><span class="u-prompt">$</span> go run ./cmd/ucupa</code></pre></div><p class="u-proof-note">Success requires all five output lines and exit code 0. See the <a class="u-inline-link" href="https://github.com/EthanSi2021/UCUPA/blob/main/docs/prototype-demo.md#run-the-example" target="_blank" rel="noopener noreferrer">expected output</a>.</p><p class="u-copy-status" id="u-copy-status" role="status"></p></div></div>
+      </section>
+      <section id="u-status" class="u-section u-status">
+        <div class="u-section-heading"><h2>Project status</h2><p class="u-section-description">UCUPA is currently an engineering prototype. Core, Facet, and Realm are implemented, including cross-Core access and controlled changes.</p></div>
+        <div class="u-status-grid"><div><h3>Implemented</h3><ul><li>Spatial reads, discovery, observation, and controlled changes</li><li>Cross-Core mounts and defined transfer workflows</li><li>Facet content access and lifecycle controls</li><li>Realm identity, authorization, and remote access</li></ul></div><div><h3>Current boundaries</h3><ul><li>Network and transfer support covers defined configurations, not arbitrary topologies.</li><li>Storage capacity and numeric precision are finite.</li><li>Production scale, high availability, and operational readiness have not been established.</li><li>The 3D scene illustrates the model; the runnable example uses local connections.</li></ul></div></div>
+      </section>
+    </main>
+    <footer class="u-footer"><div><img class="u-footer-brand" src="assets/ucupa-lockup.svg" width="145" height="41" alt="UCUPA"><p class="u-fullname">The system of United Cyber Universe Position and Anchor</p></div><div class="u-footer-meta"><a href="https://github.com/EthanSi2021/UCUPA" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="https://github.com/EthanSi2021/UCUPA/blob/main/docs/architecture/README.md" target="_blank" rel="noopener noreferrer">Architecture docs</a><br><a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank" rel="noopener noreferrer">Apache License 2.0</a><br>Prototype</div></footer>
+  </div>
+  </div>
+</body>
+</html>

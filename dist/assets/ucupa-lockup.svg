@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 428 120" width="428" height="120" role="img" aria-label="UCUPA">
+  <title>UCUPA horizontal lockup — graphite</title>
+  <g fill="none" stroke="#202d2a" stroke-linejoin="round">
+    <path d="M45 35 L45 25 A15 15 0 0 1 75 25 L75 35 C75 60 67.5 73 45.849365 85.490381 L37.189111 90.490381 A15 15 0 0 1 22.189111 64.509619 L30.849365 59.509619 C52.5 47.009619 67.50833 47.004809 89.150635 59.509619 L97.810889 64.509619 A15 15 0 0 1 82.810889 90.490381 L74.150635 85.490381 C52.5 72.990381 44.99167 59.995191 45 35 Z" stroke-width="5"/>
+    <g transform="translate(146 30)" stroke-width="5.5" stroke-linecap="square">
+      <path transform="translate(0 0)" d="M0 0 V32 C0 44 6 50 17 50 C28 50 34 44 34 32 V0"/>
+      <path transform="translate(57 0)" d="M36 5 C31 1 25 0 19 0 C7 0 0 9 0 25 C0 41 7 50 19 50 C25 50 31 49 36 45"/>
+      <path transform="translate(117 0)" d="M0 0 V32 C0 44 6 50 17 50 C28 50 34 44 34 32 V0"/>
+      <path transform="translate(177 0)" d="M0 50 V0 H17 C29 0 35 6 35 16 C35 26 29 32 17 32 H0"/>
+      <path transform="translate(231 0)" d="M0 50 L18 0 L36 50 M7 32 H29"/>
+    </g>
+  </g>
+</svg>
